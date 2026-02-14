@@ -1,0 +1,48 @@
+{
+  "kind": "build_request",
+  "title": "Make the app publicly accessible by clarifying “Go Live” and URL retrieval steps",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "text": "Update the deployment documentation to include clear, step-by-step instructions for making the app publicly accessible in the Caffeine UI, including explicitly explaining that the public URL (typically ending in .icp0.io) only appears after the user clicks the platform’s “Go live” control and where to find/copy the Frontend URL after going live.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "make the app live"
+        ]
+      },
+      "acceptanceCriteria": [
+        "frontend/docs/deployment.md includes a dedicated section for deploying via the Caffeine interface (not only dfx CLI)",
+        "The doc explicitly explains the on-screen message “Your live site will appear here once you go live” and instructs the user to click “Go live” to generate the public link",
+        "The doc describes where to locate the generated Frontend URL in the Caffeine UI and that it commonly ends with .icp0.io",
+        "Instructions are written in English and are actionable without requiring the assistant to provide the URL directly"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not add any third-party deployment providers or non-ICP hosting steps.",
+    "Do not modify immutable frontend paths listed in SYSTEM_CONTEXT.immutablePaths."
+  ],
+  "nonGoals": [
+    "Automatically generating or hardcoding a production URL in the codebase (the URL is assigned at deploy/go-live time).",
+    "Adding new backend features unrelated to deployment/link discovery."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

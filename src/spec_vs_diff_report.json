@@ -1,0 +1,29 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T07:36:28.961Z",
+  "summary": "REQ-17 appears implemented: deployment documentation now includes a dedicated Caffeine UI section with explicit “Go live” instructions, explains the “Your live site will appear here once you go live” message, and describes where to find/copy the Frontend URL (noting it typically ends in .icp0.io). There are also unrelated modifications to metadata/summary files not requested by the BuildRequest.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Updated/modified frontend file summary metadata (not part of the requested deployment documentation change).",
+      "reason": "BuildRequest only asked to update frontend/docs/deployment.md (REQ-17). No requirement requested changes to repository metadata files.",
+      "evidence": [
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Updated/modified project state metadata describing existing features/summary (not part of the requested deployment documentation change).",
+      "reason": "BuildRequest did not request any changes to project_state.json; it focused exclusively on clarifying Caffeine 'Go live' and URL discovery steps in deployment docs.",
+      "evidence": [
+        "project_state.json"
+      ]
+    }
+  ],
+  "confidence": 0.86,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/docs/deployment.md",
+    "project_state.json"
+  ]
+}

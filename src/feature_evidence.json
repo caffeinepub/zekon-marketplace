@@ -1,0 +1,24 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-update-the-deployment-documentation-to-include-clear-step-by-step-instructions-for-making-the-app-publicly-accessible-in-the-caffeine-ui-including-explicitly-explaining-that-the-public-url-typically-ending-in-icp0-io-only-appears-after-the-user-clicks-the-platform-s-go-live-control-and-where-to-find-copy-the-frontend-url-after-going-live",
+      "featureTitle": "Update the deployment documentation to include clear, step-by-step instructions for making the app publicly accessible in the Caffeine UI, including explicitly explaining that the public URL (typically ending in .icp0.io) only appears after the user clicks the platform’s “Go live” control and where to find/copy the Frontend URL after going live.",
+      "files": [
+        "frontend/docs/deployment.md"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

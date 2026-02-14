@@ -1,0 +1,37 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-14T07:36:28.964Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-17",
+        "summary": "Update the deployment documentation to include clear, step-by-step instructions for making the app publicly accessible in the Caffeine UI, including explicitly explaining that the public URL (typically ending in .icp0.io) only appears after the user clicks the platform’s “Go live” control and where to find/copy the Frontend URL after going live.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/docs/deployment.md"
+        ],
+        "matchedFiles": [
+          "frontend/docs/deployment.md"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/docs/deployment.md",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

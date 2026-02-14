@@ -1,0 +1,24 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Clarify Caffeine Go Live steps and public URL retrieval in deployment docs",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "summary": "Expand deployment documentation with actionable Caffeine UI “Go live” instructions and where to copy the generated public Frontend URL.",
+      "acceptanceCriteria": [
+        "frontend/docs/deployment.md includes a dedicated section for deploying via the Caffeine interface (not only dfx CLI)",
+        "The doc explicitly explains the on-screen message “Your live site will appear here once you go live” and instructs the user to click “Go live” to generate the public link",
+        "The doc describes where to locate the generated Frontend URL in the Caffeine UI and that it commonly ends with .icp0.io",
+        "Instructions are written in English and are actionable without requiring the assistant to provide the URL directly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/docs/deployment.md",
+          "operation": "modify",
+          "description": "Add a new, dedicated “Deploy via Caffeine UI (Go Live)” section with step-by-step instructions focused on ICP-only deployment, explicitly explaining the UI message “Your live site will appear here once you go live,” instructing the user to click “Go live,” and describing exactly where in the Caffeine UI to find and copy the generated Frontend URL (noting it commonly ends with .icp0.io)."
+        }
+      ]
+    }
+  ]
+}

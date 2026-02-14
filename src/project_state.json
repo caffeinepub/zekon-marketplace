@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 11,
+  "summary": "Build 'Zekon Marketplace' as an app: a buyer/seller marketplace with login/signup, product browsing, seller product management, and buyer order placement/history.",
+  "architectural_notes": [
+    "Front-end web app built with Bootstrap 5, jQuery 3.6, SweetAlert2, Font Awesome.",
+    "Uses localStorage for persistence (users, currentUser, products, orders) and client-side role-based routing/section toggling.",
+    "User profiles should include an optional, unverified phone number field and orders should surface buyer identity + phone number to the product’s seller (seller-side notification/view).",
+    "Order placement should include a checkout step to capture shipping address and selected payment method (PayPal/UPI/COD).",
+    "Decide and document a deployment target for the web frontend (e.g., static hosting) so the app can be accessed via a public URL."
+  ],
+  "known_issues": [
+    "Deployment/public link may not appear until the user clicks the platform’s “Go Live” control; users may be confused when no .icp0.io URL is shown."
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-authentication-using-internet-identity-and-replace-the-provided-html-jquery-email-password-localstorage-login-flow-with-an-internet-identity-login-logout-flow-after-first-login-prompt-the-user-to-create-a-profile-with-display-name-and-role-buyer-or-seller-persist-the-profile-keyed-by-the-user-principal-so-returning-users-go-directly-to-their-dashboard",
+      "title": "Implement authentication using Internet Identity and replace the provided HTML/jQuery email+password localStorage login flow with an Internet Identity login/logout flow. After first login, prompt the user to create a profile with: display name and role (Buyer or Seller). Persist the profile keyed by the user Principal so returning users go directly to their dashboard.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-buyer-ui-in-react-to-match-the-described-flows-a-buyer-dashboard-with-a-top-app-bar-app-name-logout-a-home-tab-listing-all-available-products-as-clickable-product-cards-image-name-price-and-an-orders-tab-showing-the-current-buyer-s-order-history-implement-a-fixed-bottom-navigation-with-tabs-home-and-orders",
+      "title": "Build the Buyer UI in React to match the described flows: a Buyer dashboard with a top app bar (app name + Logout), a Home tab listing all available products as clickable product cards (image, name, price), and an Orders tab showing the current buyer’s order history. Implement a fixed bottom navigation with tabs: Home and Orders.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-seller-ui-in-react-to-match-the-described-flows-a-seller-dashboard-with-a-top-app-bar-app-name-logout-an-add-product-form-name-price-image-url-that-creates-a-product-via-the-backend-and-a-seller-products-section-listing-only-the-current-seller-s-products-as-cards-image-name-price",
+      "title": "Build the Seller UI in React to match the described flows: a Seller dashboard with a top app bar (app name + Logout), an Add Product form (name, price, image URL) that creates a product via the backend, and a Seller Products section listing only the current seller’s products as cards (image, name, price).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-all-client-side-persistence-localstorage-for-users-currentuser-products-orders-with-backend-canister-persistence-frontend-should-fetch-mutate-data-using-react-query-and-update-ui-states-accordingly-loading-empty-error",
+      "title": "Replace all client-side persistence (localStorage for users/currentUser/products/orders) with backend canister persistence. Frontend should fetch/mutate data using React Query and update UI states accordingly (loading, empty, error).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-coherent-visual-theme-for-the-app-using-tailwind-and-existing-ui-components-without-editing-immutable-component-sources-use-a-warm-neutral-background-green-accent-color-and-a-clean-card-based-layout-consistent-across-auth-profile-setup-buyer-screens-and-seller-screens-avoid-blue-purple-as-primary-accents",
+      "title": "Create a coherent visual theme for the app using Tailwind (and existing UI components without editing immutable component sources): use a warm neutral background, green accent color, and a clean card-based layout consistent across auth/profile setup, buyer screens, and seller screens. Avoid blue/purple as primary accents.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-static-image-assets-for-branding-and-empty-states-placed-in-frontend-public-assets-generated-and-render-them-in-the-ui-logo-in-auth-header-empty-state-illustrations-in-product-orders-lists-when-empty",
+      "title": "Generate and include static image assets for branding and empty states, placed in frontend/public/assets/generated, and render them in the UI (logo in auth/header; empty state illustrations in product/orders lists when empty).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-extend-user-profiles-to-include-an-optional-phone-number-field-unverified-that-the-user-can-fill-in-during-profile-setup-and-later-update",
+      "title": "Extend user profiles to include an optional phone number field (unverified) that the user can fill in during profile setup and later update.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-seller-visible-orders-notifications-view-that-lists-orders-for-the-current-seller-s-products-and-displays-the-buyer-s-identity-and-phone-number-for-each-order",
+      "title": "Add a seller-visible orders/notifications view that lists orders for the current seller’s products and displays the buyer’s identity and phone number for each order.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-buyer-checkout-interface-that-opens-when-the-buyer-chooses-to-buy-a-product-requiring-the-buyer-to-enter-a-shipping-address-and-select-a-payment-method-paypal-upi-or-cash-on-delivery-before-the-order-is-created",
+      "title": "Add a buyer checkout interface that opens when the buyer chooses to buy a product, requiring the buyer to enter a shipping address and select a payment method (PayPal, UPI, or Cash on Delivery) before the order is created.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-frontend-order-creation-flow-react-query-mutation-actor-calls-to-pass-shipping-address-and-payment-method-to-the-backend-and-update-order-rendering-to-display-these-details-in-buyer-order-history-and-seller-orders-notifications",
+      "title": "Update the frontend order creation flow (React Query mutation + actor calls) to pass shipping address and payment method to the backend, and update order rendering to display these details in buyer order history and seller orders/notifications.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-persistent-in-app-attribution-text-for-the-name-aadish-sharma-that-is-visible-across-the-app-including-auth-profile-setup-buyer-and-seller-screens-without-disrupting-existing-navigation-layout",
+      "title": "Add persistent in-app attribution text for the name \"Aadish Sharma\" that is visible across the app (including auth, profile setup, buyer, and seller screens) without disrupting existing navigation/layout.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-clear-documentation-for-deploying-the-app-as-a-web-app-on-the-internet-computer-and-for-obtaining-the-public-url-after-deployment",
+      "title": "Add clear documentation for deploying the app as a web app on the Internet Computer and for obtaining the public URL after deployment.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-deployment-documentation-to-include-clear-step-by-step-instructions-for-making-the-app-publicly-accessible-in-the-caffeine-ui-including-explicitly-explaining-that-the-public-url-typically-ending-in-icp0-io-only-appears-after-the-user-clicks-the-platform-s-go-live-control-and-where-to-find-copy-the-frontend-url-after-going-live",
+      "title": "Update the deployment documentation to include clear, step-by-step instructions for making the app publicly accessible in the Caffeine UI, including explicitly explaining that the public URL (typically ending in .icp0.io) only appears after the user clicks the platform’s “Go live” control and where to find/copy the Frontend URL after going live.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create Zekon Marketplace app with buyer/seller roles, auth (sign up/sign in), and logout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Buyer experience: browse available products, view product cards, and place orders",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Buyer experience: view order history ('My Orders') with order details",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Seller experience: add products (name, price, image URL) and view seller product list",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Client-side persistence using browser storage for users, current session, products, and orders",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "UI structure: auth section, buyer section with bottom navigation (Home/Orders), seller section dashboard",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Create Motoko backend data models and APIs to support marketplace functionality: user profiles (principal -> {name, role}), products (id, name, price, imageUrl, sellerPrincipal, createdAt), and orders (id, buyerPrincipal, productSnapshot {id,name,price,imageUrl,sellerPrincipal}, createdAt). Provide query/update methods to: getCurrentUserProfile, upsertCurrentUserProfile, createProduct, listAllProducts, listMyProducts, createOrder, listMyOrders.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add optional phone number field to user profile (unverified; stored with profile)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "On order placement, notify the seller with the buyer’s identity and phone number associated with the order",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "On order placement, persist enough buyer identity information so the seller can see the buyer’s identity and phone number for that order.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Add checkout flow on 'Buy Now': collect shipping address and let buyer choose payment method (PayPal, UPI, Cash on Delivery) before placing order",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Extend the backend Order model and createOrder API to persist shipping address and chosen payment method for each order, and return these fields in listMyOrders and listOrdersForMyProducts.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Add/adjust upgrade/migration logic so existing canister state containing older Order records can be upgraded without losing existing orders when the Order type gains shipping address and payment method fields.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Deploy Zekon Marketplace as a web app and provide a public link for access",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Add branding/attribution with the name 'Aadish Sharma' in the app (e.g., header/footer/about)",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Zekon Marketplace",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
